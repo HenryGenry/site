@@ -23,14 +23,51 @@
     <source src="https://cs1-50v4.vk-cdn.net/p8/5c884e7f7e4b96.mp3" type="audio/mpeg">
     <a href="https://cs1-50v4.vk-cdn.net/p8/5c884e7f7e4b96.mp3">Скачайть</a>.
   </audio>
-<div id="slideShowImages">
-    <img src="https://pp.vk.me/c628318/v628318820/17a15/Q-RrT98NLHI.jpg" alt="Slide 1" />
-    <img src="https://pp.vk.me/c628318/v628318820/179fa/a1lau7QDSu0.jpg" alt="Slide 2" />
-    <img src="https://pp.vk.me/c628318/v628318820/17a15/Q-RrT98NLHI.jpg" alt="Slide 3" />    
-    <img src="https://pp.vk.me/c628318/v628318820/179fa/a1lau7QDSu0.jpg" alt="Slide 4" />
-  </div>  
-  <button id="slideShowButton"></button> <!-- Optional button element. -->
-  <script src="slideShow.js"></script>
+      
+      
+<div id="header" >
+ <img src="http://aksmoney.com/images/mag/1.png" id="img_1" style="position:absolute; width:645px; height:353px" />
+ <img src="http://aksmoney.com/images/mag/2.png" id="img_2" style="position:absolute; width:645px;opacity: 0; filter: alpha(opacity=0); height:353px " />
+ <img src="http://aksmoney.com/images/mag/3.png" id="img_3" style="position:absolute; width:645px;opacity: 0; filter: alpha(opacity=0); height:353px " />
+ <img src="http://aksmoney.com/images/mag/4.png" id="img_4" style="position:absolute; width:645px;opacity: 0; filter: alpha(opacity=0); height:353px " />
+ <img src="http://aksmoney.com/images/mag/5.png" id="img_5" style="position:absolute; width:645px;opacity: 0; filter: alpha(opacity=0); height:353px " />
+ <img src="http://aksmoney.com/images/mag/6.png" id="img_6" style="position:absolute; width:645px;opacity: 0; filter: alpha(opacity=0); height:353px " />
+ <img src="http://aksmoney.com/images/mag/7.png" id="img_7" style="position:absolute; width:645px;opacity: 0; filter: alpha(opacity=0); height:353px " />
+ <img src="http://aksmoney.com/images/mag/8.png" id="img_8" style="position:absolute; width:645px;opacity: 0; filter: alpha(opacity=0); height:353px " />
+ <a href="http://alipromo.com/redirect/cpa/o/6c32355cccda19eca697d3f6b8c40947" id="go" title="Moda" ><img src="http://aksmoney.com/images/mag/9.png" id="img_9" style="position:absolute; width:645px;opacity: 0; filter: alpha(opacity=0); height:353px " /></a>
+  </div>
+ <script type="text/javascript">
+ var image_count = 9;
+ var interval = 1000; //пауза
+var time_out = 15; //скорость смены картинки
+var i = 5;
+ var timeout;
+ var opacity = 100;
+ function change_image() {
+ opacity--;
+ var j = i + 1;
+ var current_image = 'img_' + i;
+ if (i == image_count) j = 1;
+ var next_image = 'img_' + j;
+ document.getElementById(current_image).style.opacity=opacity/100;
+ document.getElementById(current_image).style.filter='alpha(opacity='+opacity+')';
+ document.getElementById(next_image).style.opacity= (100-opacity)/100;
+ document.getElementById(next_image).style.filter=' alpha(opacity='+(100-opacity)+')';
+ timeout = setTimeout("change_image()", time_out);
+ if (opacity==1) {
+ opacity = 100;
+ clearTimeout(timeout);
+ 
+ i++;
+ if (i>image_count) i=1;
+ document.getElementById('go').href = ["http://alipromo.com/redirect/cpa/o/6c32355cccda19eca697d3f6b8c40947","http://alipromo.com/redirect/cpa/o/7415b125ad36017d4f0c0f5181bc8b52","http://alipromo.com/redirect/cpa/o/4b82fc862f2878bb0d1c87749c1ce637","http://ru.itao.com/c/amelieitao?tracelog=itao_aenew","http://alipromo.com/redirect/cpa/o/0b15c84c040858461d5b9d57170f7be5","http://alipromo.com/redirect/cpa/o/0731978897c1fcbaeb5be43699cb6d52","http://alipromo.com/redirect/cpa/o/b6c342a76c803bb18ced534ffa90ec61","http://alipromo.com/redirect/cpa/o/d606c61078751f6c75f314ed28da65a0","http://alipromo.com/redirect/cpa/o/37922acb8e8688a83b2e6ac8e1993ff0"][i-1]
+ document.getElementById('go').title = ["Moda","Krasota","Smartfon","Konkurs","Amelie","Po darki","Electrnika","Sport","Expert"][i-1]
+ timeout = setTimeout("change_image()", interval);
+ }
+ }
+ change_image()
+ </script>
+
 
     </section>
   </body>
