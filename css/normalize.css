@@ -51,7 +51,7 @@ summary {
  * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
  */
 #player {
- width: 50%;
+ width: 100%;
 }
 
 audio,
